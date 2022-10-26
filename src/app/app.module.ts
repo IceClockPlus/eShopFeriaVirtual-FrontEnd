@@ -6,18 +6,29 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
-import { MatInputModule} from '@angular/material/input'
+import { MatInputModule} from '@angular/material/input';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonModule} from '@angular/material/button';
+
+import { DefaulLayoutComponent } from './layout/defaul-layout/defaul-layout.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DefaulLayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

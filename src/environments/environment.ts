@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://eshopferiavirtual-api.azurewebsites.net'
+  apiUrl: 'https://localhost:7171'
 };
 
 /*

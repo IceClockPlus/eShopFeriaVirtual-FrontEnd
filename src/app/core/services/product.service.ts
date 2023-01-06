@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject} from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../src/environments/environment';
 
 import { ApiPagedResponse } from '../models/Wrappers/ApiPagedResponse';
 import { ProductDTO } from '../models/products/ProductDTO';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
+  private productEndpoint: string = `${environment.apiUrl}/products`;
 
-  private productEndpoint : string = `${environment.apiUrl}/products`;
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   public getProducts(): Observable<ApiPagedResponse<ProductDTO[]>> {
     let methodEndpoint = this.productEndpoint;

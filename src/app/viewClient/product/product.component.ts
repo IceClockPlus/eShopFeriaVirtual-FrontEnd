@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { from, Observable, of} from 'rxjs';
-import { ProductDTO } from 'src/app/core/models/products/ProductDTO';
+import { ProductDTO } from '../../core/models/products/ProductDTO';
 
-import { ProductService } from 'src/app/core/services/product.service';
+import { ProductService } from '../../core/services/product.service';
 
 @Component({
   selector: 'app-product',

@@ -6,19 +6,30 @@ import { ClientLayoutComponent } from './layout/client-layout/client-layout.comp
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'product',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     component: ClientLayoutComponent,
     children: [
       {
-        path: 'producto',
-        loadChildren: () => 
-          import('./viewClient/product/product.module').then((m) => m.ProductModule)
-      }
-    ]
-  }
+        path: 'product',
+        loadChildren: () =>
+          import('./features/product/product.module').then(
+            (m) => m.ProductModule
+          ),
+      },
+    ],
+  },
+  {
+    path: '**',
+    redirectTo: 'product',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

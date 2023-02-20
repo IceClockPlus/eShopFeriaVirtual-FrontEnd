@@ -15,7 +15,7 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getProducts(): Observable<ApiPagedResponse<ProductDTO[]>> {
+  public getProducts(): Observable<ApiPagedResponse<Array<ProductDTO>>> {
     let methodEndpoint = this.productEndpoint;
     return this.httpClient.get<ApiPagedResponse<ProductDTO[]>>(methodEndpoint);
   }

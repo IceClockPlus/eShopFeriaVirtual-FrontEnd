@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductCardInfo } from '../../models/ProductCardInfo';
 
 @Component({
   selector: 'app-product-list',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-
-  constructor() { }
+  public productList$ : Observable<Array<ProductCardInfo>>;
+  constructor() {
+    this.productList$ = new Observable<Array<ProductCardInfo>>;
+  }
 
   ngOnInit(): void {
   }
